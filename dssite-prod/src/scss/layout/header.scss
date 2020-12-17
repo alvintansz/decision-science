@@ -1,0 +1,137 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  transition: all 0.15s ease;
+
+  .logo {
+    position: fixed;
+    top: percentage(54/730);
+    left: percentage(20/1440);
+    z-index: 100;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+
+    &.animated {
+      left: percentage(73/1440);
+      opacity: 1;
+    }
+
+    @include max-lg() {
+      top: 26px;
+      left: 15px;
+
+      svg {
+        width: 94px;
+        height: auto;
+      }
+    }
+  }
+
+  .hamburger {
+    display: inline-block;
+    overflow: visible;
+    margin: 0;
+    padding: 15px;
+    cursor: pointer;
+    transition-timing-function: linear;
+    transition-duration: 0.15s;
+    transition-property: opacity, filter;
+    text-transform: none;
+    color: inherit;
+    border: 0;
+    background-color: transparent;
+    position: fixed;
+    top: 17px;
+    right: 2px;
+    z-index: 100;
+    display: none;
+    .hamburger-box {
+      position: relative;
+      display: inline-block;
+      width: 22px;
+      height: 16px;
+    }
+
+    .hamburger-line {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 22px;
+      height: 1px;
+      transition-timing-function: ease;
+      transition-duration: 0.15s;
+      transition-property: transform;
+      background-color: $white;
+      left: 0;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 8px;
+      }
+
+      &:nth-child(3) {
+        top: 16px;
+      }
+    }
+
+    &.active {
+      .hamburger-line {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(6px, 5px);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(6px, -5px);
+        }
+      }
+    }
+  }
+
+  @include max-lg() {
+    &__content {
+      width: 100%;
+      height: 60px;
+      position: relative;
+    }
+
+    &.sticky {
+      background: $white;
+      .hamburger {
+        .hamburger-line {
+          background-color: $main_color;
+        }
+      }
+    }
+
+    &.opened {
+      background: none;
+
+      .hamburger {
+        .hamburger-line {
+          background-color: $white;
+        }
+      }
+    }
+
+    .logo,
+    .hamburger {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .hamburger {
+      display: block;
+    }
+  }
+}

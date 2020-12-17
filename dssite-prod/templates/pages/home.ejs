@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="home__page">
+  <% include ../partials/header %>
+  <% include ../partials/navigation %>
+  <main class="steenify__page" data-view="home" id="fullpage">
+    <% include ../partials/home/block-1 %>
+    <% include ../partials/home/block-2 %>
+    <% include ../partials/home/block-3 %>
+    <% include ../partials/home/block-4 %>
+    <% include ../partials/home/block-6 %>
+    <% include ../partials/home/block-5 %>
+    <!-- <% include ../partials/home/block-7 %> -->
+    <% include ../partials/home/block-8 %>
+    <% include ../partials/home/block-9 %>
+  </main>
+
+  <div class="page__cover">
+    <canvas id="c1" class="canvas"></canvas>
+
+    <video id="video" src="/public/video/BCA-Animation-Fade-in-min.mp4" controls="true" playsinline
+      crossorigin="anonymous" muted="muted" class="video"></video>
+  </div>
+  <% include ../partials/footer %>
+</body>
+
+</html>

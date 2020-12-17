@@ -1,0 +1,23 @@
+// size
+$fullWidth: 100%;
+
+// font
+$font: 'Lato';
+$title: 'Archivo';
+$font_saira: 'Saira';
+$font_muli: 'Muli';
+
+// base color
+$nocolor: transparent;
+$white: #ffffff;
+$black: #000000;
+
+// web color
+$main_color: #ED2224;
+$second_color: #808080;
+$third_color: #D41222;
+$fourth_color: #C6212F;
+$text_color: #212121;
+$web_bg: $white;
+
+@import './mixin.scss';
